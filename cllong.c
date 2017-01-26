@@ -1,42 +1,6 @@
 #include<stdio.h>
 #include "cllong.h"
 
-int main(){
-
-	cllong t1, t2, t3, res;
-
-	cll_set(&t1, 3LL, 4LL);
-	printf("set real/imag\n");
-	cll_print(t1);
-
-	cll_get(&t2, t1);
-	printf("use get function\n");
-	cll_print(t2);
-	
-	cll_add(&t3, t1, t2);
-	printf("use add\n");
-	cll_print(t3);
-
-	cll_sub(&res, t1, t3);
-	printf("use sub\n");
-	cll_print(res);
-
-	cll_mul(&res, t3, t1);
-	printf("use mul\n");
-	cll_print(res);
-	
-	cll_conjugate(&res, t3);
-	printf("use conjugate\n");
-	cll_print(res);
-
-	cll_norm2(&res, t1);
-	printf("use norm2\n");
-	cll_print(res);
-
-	printf("%lld, %lld \n", cll_real(res), cll_imag(res));
-
-}
-
 void cll_set(cllong* op, long long real, long long imag){
 
 	op->real = real;
